@@ -1,0 +1,143 @@
+/* Definindo variáveis de tema */
+:root {
+    --cor-fundo-claro: #ffffff;
+    --cor-texto-claro: #000000;
+  
+    --cor-fundo-escuro: #101010;
+    --cor-texto-escuro: #ffffff;
+  
+    --cor-fundo-rosa: #ffc1e0;
+    --cor-texto-rosa: #ce20a3;
+
+    --cor-fundo-vermelho: #c40303;   /* Cor de fundo  */
+    --cor-texto-vermelho: #ffffff;   /* Cor do texto */
+    
+    /* Tema padrão */
+    --cor-fundo-padrao: #79f7b8d3;
+    --cor-texto-padrao: #00703a;
+}
+
+/* Estilo para tema Claro */
+.theme-light {
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-claro);
+}
+
+/* Estilo para tema Escuro */
+.theme-dark {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-escuro);
+}
+
+/* Estilo para tema Rosa */
+.theme-pink {
+    background-color: var(--cor-fundo-rosa);
+    color: var(--cor-texto-rosa);
+}
+
+/* Estilo para tema Padrão */
+.theme-default {
+    background-color: var(--cor-fundo-padrao);
+    color: var(--cor-texto-padrao);
+}
+.theme-red {
+    background-color: var(--cor-fundo-vermelho);
+    color: var(--cor-texto-vermelho);
+}
+
+/* Estilos para os botões de filtro de acordo com os temas */
+
+/* Tema Claro */
+.theme-light .filtros button {
+    background-color: #cdd1d3; /* Fundo branco no tema claro */
+    color: #000000; /* Texto preto */
+  }
+  
+  .theme-light .filtros button:hover {
+    background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
+  }
+  
+  /* Tema Escuro */
+  .theme-dark .filtros button {
+    background-color: #444444; /* Fundo escuro no tema escuro */
+    color: #ffffff; /* Texto branco */
+  }
+  
+  .theme-dark .filtros button:hover {
+    background-color: #666666; /* Cor de fundo ao passar o mouse */
+  }
+  
+  /* Tema Rosa */
+  .theme-pink .filtros button {
+    background-color: #f33996; /* Fundo rosa */
+    color: #f4bde6; /* Texto rosa claro */
+  }
+  
+  .theme-pink .filtros button:hover {
+    background-color: #ff66b2; /* Cor de fundo ao passar o mouse */
+  }
+  
+  /* Tema Vermelho */
+  .theme-red .filtros button {
+    background-color: #911010; /* Fundo vermelho */
+    color: #ffffff; /* Texto branco */
+  }
+  
+  .theme-red .filtros button:hover {
+    background-color: #b68bca;
+  }
+  
+  /* Tema Padrão */
+  .theme-default .filtros button {
+    background-color: #34b768fd; /* Fundo azul claro */
+    color: #014d44; /* Texto verde escuro */
+  }
+  
+  .theme-default .filtros button:hover {
+    background-color: #9fdee7; /* Cor de fundo ao passar o mouse */
+  }
+  
+
+/* Garantindo que botões e campos de texto também mudem de cor */
+textarea, button {
+    background-color: inherit;
+    color: inherit;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #bacac4;
+    border-radius: 5px;
+}
+
+/* Estilos de foco nos campos de entrada e botões */
+textarea:focus, button:focus {
+    outline: none;
+    border-color: #d001ff;
+}
+
+/* Ajustes gerais para melhorar a visibilidade do conteúdo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+/* Estilo para as prioridades */
+.urgente {
+    color: red;
+    font-weight: bold;
+}
+
+.alta {
+    color: orange;
+    font-weight: bold;
+}
+
+.media {
+    color: blue;
+    font-weight: bold;
+}
+
+.baixa {
+    color: green;
+    font-weight: bold;
+}

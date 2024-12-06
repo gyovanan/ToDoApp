@@ -1,38 +1,311 @@
+/* Estilo geral da página */
 .App {
-  text-align: center;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Caixa de texto */
+textarea {
+  width: 100%;
+  height: 80px;  /* Reduzindo a altura */
+  font-family: inherit;
+  padding: 10px;
+  font-size: 14px;  /* Ajustando o tamanho da fonte */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Botão de salvar */
+button {
+  cursor: pointer;
+  padding: 8px 15px;  /* Tornando o botão menor */
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  background-color: #00796b;
+  color: white;
+  transition: background-color 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button:hover {
+  background-color: #004d40;
+}
+
+/* Estilo para tema Padrão */
+.theme-default {
+  background-color: #e0f7fa;  /* Cor suave para o fundo */
+  color: #00796b;
+}
+
+/* Estilo para tema Claro */
+.theme-light {
+  background-color: var(--cor-fundo-claro);
+  color: var(--cor-texto-claro);
+}
+
+/* Estilo para tema Escuro */
+.theme-dark {
+  background-color: var(--cor-fundo-escuro);
+  color: var(--cor-texto-escuro);
+}
+
+/* Estilo para tema Rosa */
+.theme-pink {
+  background-color: var(--cor-fundo-rosa);
+  color: var(--cor-texto-rosa);
+}
+
+/* Filtros, temas e fontes */
+.filtros button,
+.temas button,
+.font-selector button {
+  margin: 5px;
+  padding: 8px;
+  font-size: 14px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.filtros button:hover,
+.temas button:hover,
+.font-selector button:hover {
+  background-color: #004d40;
+}
+
+.font-selector button {
+  background-color: #e0f7fa;
+}
+
+/* Lista de notas */
+#notasSalvas {
+  margin-top: 20px;
+}
+
+#notasSalvas div {
+  margin: 10px 0;
+}
+
+/* Estilo para notas com prioridade */
+span {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+#notasSalvas button {
+  background-color: #00796b;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+#notasSalvas button:hover {
+  background-color: #004d40;
+}
+
+/* Estilo para o botão Prioridade */
+.btn-prioridade {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1px solid hsl(255, 100%, 21%)S;
+  background-color: hsl(0, 100%, 19%);
+  color: white;
+  width: 150px;
+  cursor: pointer;
+}
+
+.btn-prioridade:hover {
+  background-color: #004d40;
+}
+
+.btn-prioridade .prioridade-options {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgb(99, 85, 85);
+  border-radius: 4px;
+  width: 150px;
+  z-index: 1;
+  margin-top: 5px;
+}
+
+.btn-prioridade .prioridade-options div {
+  padding: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #dc1c9c;
+}
+
+.btn-prioridade .prioridade-options div:hover {
+  background-color: #960fdf;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Menu lateral (Hamburger) */
+/* Estilos para o menu lateral */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Alterado para estar escondido inicialmente à esquerda */
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  border-left: 2px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease-in-out; /* Transição da posição para a esquerda */
+  z-index: 1000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Menu lateral visível */
+.menu-lateral.show {
+  left: 0; /* Agora a posição vai para 0 (visível) à esquerda */
+}
+.menu-lateral.show {
+  width: 150px; /* Largura reduzida quando o menu estiver aberto */
+}
+
+/* Estilo do menu hamburger (três barras) */
+.menu-hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+}
+
+.menu-hamburger .bar {
+  background-color: #333;
+  height: 5px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Tela de Login */
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #69c3af, #eae5e5); /* Gradiente suave */
+  font-family: 'Arial', sans-serif;
+  flex-direction: column;  /* Organizando o conteúdo na coluna */
+}
+
+.login h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  margin-top: 0;  /* Removendo qualquer margem no topo */
+}
+
+.login input {
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.login button {
+  width: 100%;
+  max-width: 180px;
+  padding: 1rem;
+  background-color: #0f7260;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login button:hover {
+  background-color: #91bdb0;
+}
+
+.login .erro {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.login .erro::before {
+  content: "⚠️ ";
+}
+
+/* Adicionando sombra e borda no campo de entrada */
+.login input:focus {
+  border-color: #76c6a4;
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
+}
+
+/* Adicionando sombra e borda no botão */
+.login button:focus {
+  box-shadow: 0 0 10px rgba(119, 150, 150, 0.498);
+}
+
+/* Estilo para as bolinhas de prioridade ao lado da nota */
+.nota-baixa::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: lightblue;
+  margin-right: 10px;
+}
+
+.nota-media::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: yellow;
+  margin-right: 10px;
+}
+
+.nota-alta::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: orange;
+  margin-right: 10px;
+}
+
+.nota-urgente::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  margin-right: 10px;
+}
+
+/* Estilo para notas concluídas (com risquinho) */
+.nota-concluida {
+  text-decoration: line-through;
+  color: grey;
+  font-style: italic;
 }
